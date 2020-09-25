@@ -4,8 +4,8 @@ import folium
 from folium.plugins import HeatMap
 
 #ファイル読み込み
-station = pd.read_csv(r"station_data_visualization/station_geocode.csv")
-station_data = pd.read_excel(r"station_data_visualization/東京近郊駅データ.xlsx",sheet_name="駅周辺地域データ")
+station = pd.read_csv(r"station_data_visualization/data/station_geocode.csv")
+station_data = pd.read_excel(r"station_data_visualization/data/東京近郊駅データ.xlsx",sheet_name="駅周辺地域データ")
 #station.loc[:,["id","lat","lon"]]
 
 
@@ -17,7 +17,7 @@ station_data_2 = pd.merge(station_data,station.loc[:,["id","lat","lon"]], how = 
 #%%　ここからmap作成
 
 #mapの生成
-map = folium.Map(location=[35.6908333333333, 139.700277777778], zoom_start=10)
+map = folium.Map(location=[35.6908333333333, 139.700277777778], zoom_start=12)
 
 #heatmap作成用の変数
 import math
